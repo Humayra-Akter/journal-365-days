@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "992741133177",
+    "project_id": "journal-365-days",
+    "storage_bucket": "journal-365-days.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992741133177:android:c0a8ff25cec85a0622fda8",
+        "android_client_info": {
+          "package_name": "com.humayra.journal365Days"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_KMrqQKdJnr6sXjPH7l3dk_KgwSgRwJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
