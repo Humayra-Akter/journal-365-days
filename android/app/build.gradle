@@ -83,7 +83,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.journal365days"
+    namespace 'com.humayra.journal365Days'
     defaultConfig {
         applicationId 'com.humayra.journal365Days'
         minSdkVersion rootProject.ext.minSdkVersion
