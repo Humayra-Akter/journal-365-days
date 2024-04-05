@@ -7,11 +7,11 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const onPressSignup = ({ navigation }) => {
+  const onPressSignup = () => {
     navigation.navigate("Signup");
   };
 
@@ -45,6 +45,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#FF5733",
     padding: 12,
     borderRadius: 10,
-    marginBottom: 16,
+    marginBottom: 11,
   },
 });
