@@ -15,14 +15,16 @@ export default function SignupScreen({ navigation }) {
 
   const onPressSignup = async () => {
     if (email && password) {
-     try{
-      const userCreed= await auth().createUserWithEmailAndPassword(email, password);
-      console.log(userCreed)
-     }
-     catch(err){
-      console.log(err)
-      Alert.alert(err.message)
-     }
+      try {
+        const userCreed = await auth().createUserWithEmailAndPassword(
+          email,
+          password
+        );
+        console.log(userCreed);
+      } catch (err) {
+        console.log(err);
+        Alert.alert(err.message);
+      }
     } else {
       Alert.alert("Please fill all fields");
     }
