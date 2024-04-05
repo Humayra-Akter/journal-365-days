@@ -4,8 +4,10 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import React, { useState } from "react";
+import auth from "@react-native-firebase/auth";
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
@@ -15,12 +17,41 @@ export default function LoginScreen({ navigation }) {
     navigation.navigate("Signup");
   };
 
+  const onPressLogin = async () => {
+    if (email && password) {
+      try {
+        const userCred = await auth().signInWithEmailAndPassword(
+          email,
+          password
+        );
+        console.log(userCred);
+      } catch (err) {
+        Alert.alert(err.message);
+      }
+    } else {
+      Alert.alert("Please fill all fields.");
+    }
+  };
+
   return (
     <View style={{ padding: 16 }}>
-      <TextInput placeholder="Email" style={styles.input} />
-      <TextInput placeholder="Password" style={styles.input} />
+      <TextInput
+        onChangeText={(text) => {
+          setEmail(text);
+        }}
+        placeholder="Email"
+        style={styles.input}
+      />
+      <TextInput
+        onChangeText={(text) => {
+          setPassword(text);
+        }}
+        placeholder="Password"
+        style={styles.input}
+        secureTextEntry={true}
+      />
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={onPressLogin} style={styles.button}>
         <Text style={{ color: "#FFF", fontWeight: "bold" }}>Login</Text>
       </TouchableOpacity>
 

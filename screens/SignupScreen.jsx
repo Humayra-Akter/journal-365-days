@@ -7,7 +7,7 @@ import {
   Alert,
 } from "react-native";
 import React, { useState } from "react";
-import auth, { firebase } from "@react-native-firebase/auth";
+import auth from "@react-native-firebase/auth";
 
 export default function SignupScreen({ navigation }) {
   const [email, setEmail] = useState("");
@@ -16,7 +16,7 @@ export default function SignupScreen({ navigation }) {
   const onPressSignup = async () => {
     if (email && password) {
      try{
-      const userCreed= await firebase.auth().createUserWithEmailAndPassword(email, password);
+      const userCreed= await auth().createUserWithEmailAndPassword(email, password);
       console.log(userCreed)
      }
      catch(err){
